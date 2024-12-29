@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import logo from '$lib/images/svelte-logo.svg';
-	import github from '$lib/images/github.svg';
+	import logo from '$lib/images/logo.png';
+	import spotify from '$lib/images/spotify.svg';
 </script>
 
 <header>
 	<div class="corner">
-		<a href="https://svelte.dev/docs/kit">
-			<img src={logo} alt="SvelteKit" />
+		<a href="/">
+			<img src={logo} alt="SetSync" />
 		</a>
 	</div>
 
@@ -22,8 +22,8 @@
 			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
 				<a href="/about">About</a>
 			</li>
-			<li aria-current={$page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
-				<a href="/sverdle">Sverdle</a>
+			<li aria-current={$page.url.pathname.startsWith('/build') ? 'page' : undefined}>
+				<a href="/build">Build</a>
 			</li>
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
@@ -32,9 +32,16 @@
 	</nav>
 
 	<div class="corner">
-		<a href="https://github.com/sveltejs/kit">
-			<img src={github} alt="GitHub" />
+		<a href="https://open.spotify.com/">
+			<img src={spotify} alt="Spotify" />
 		</a>
+		<!-- <a class="donate-link" href="https://www.buymeacoffee.com/paulman" target="_blank"
+			><img
+				src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+				alt="Buy Me A Coffee"
+				style="height: 60px !important;width: 217px !important;"
+			/></a
+		> -->
 	</div>
 </header>
 
@@ -42,11 +49,12 @@
 	header {
 		display: flex;
 		justify-content: space-between;
+		background-color: var(--color-background);
 	}
 
 	.corner {
-		width: 3em;
-		height: 3em;
+		width: 4em;
+		height: 4em;
 	}
 
 	.corner a {
@@ -58,20 +66,20 @@
 	}
 
 	.corner img {
-		width: 2em;
-		height: 2em;
+		width: 3em;
+		height: 3em;
 		object-fit: contain;
 	}
 
 	nav {
 		display: flex;
 		justify-content: center;
-		--background: rgba(255, 255, 255, 0.7);
+		--background: rgba(255, 255, 255, 0.857);
 	}
 
 	svg {
-		width: 2em;
-		height: 3em;
+		width: 2.666em;
+		height: 4em;
 		display: block;
 	}
 
@@ -83,7 +91,7 @@
 		position: relative;
 		padding: 0;
 		margin: 0;
-		height: 3em;
+		height: 4em;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -106,7 +114,7 @@
 		top: 0;
 		left: calc(50% - var(--size));
 		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--color-theme-1);
+		border-top: var(--size) solid var(--color-accent-light);
 	}
 
 	nav a {

@@ -1,10 +1,13 @@
 <script lang="ts">
 	import Header from '@components/Header.svelte';
-	import '../app.css';
+	import Paper, { Content } from '@smui/paper';
+	import '../app.css'; // FIXME: Do i need this?
 
 	let { children } = $props();
+	const year = new Date().getFullYear();
 </script>
 
+<!-- Default to dark theme -->
 <div class="app">
 	<Header />
 
@@ -13,9 +16,12 @@
 	</main>
 
 	<footer>
-		<p>
-			visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to learn about SvelteKit
-		</p>
+		<Paper color="primary">
+			<Content
+				><small>Copyright &copy; {JSON.stringify(year)}, RetroSet. All Rights Reserved</small
+				></Content
+			>
+		</Paper>
 	</footer>
 </div>
 
