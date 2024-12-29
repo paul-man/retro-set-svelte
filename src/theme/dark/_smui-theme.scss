@@ -1,0 +1,34 @@
+@use 'sass:color';
+
+@use '@material/theme/color-palette';
+
+
+@use '@material/theme/index' as theme with ($primary: #4AA6BD,
+  $secondary: #6496b5,
+  $surface: #FBF4EF,
+  $background: #999999,
+  $error: #bf942a);
+
+// @use '@material/shape/index' as shape with ($small-component-radius: 50,
+//   $medium-component-radius: 100,
+//   $large-component-radius: 1500);
+
+$surface: #fbf4ef;
+$background: #999999;
+$error: #f44336;
+$accent-light: #13cf8a;
+$accent-dark: #26335a;
+
+html,
+body {
+  background-color: var(--color-bg-dark);
+  color: theme.$on-surface;
+}
+
+a {
+  color: #40b3ff;
+}
+
+a:visited {
+  color: color.scale(#40b3ff, $lightness: -35%);
+}
